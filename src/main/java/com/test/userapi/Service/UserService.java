@@ -7,6 +7,7 @@ import jakarta.annotation.PostConstruct;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
+import java.time.ZoneId;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
@@ -174,7 +175,10 @@ public class UserService {
 
         newUser.setId(UUID.randomUUID());
         newUser.setPassword(AES.encrypt(newUser.getPassword()));
-        newUser.setCreatedAt(LocalDateTime.now());
+
+        ZoneId madagascarZone = ZoneId.of("Indian/Antananarivo");
+        LocalDateTime madagascarTime = LocalDateTime.now(madagascarZone);
+        newUser.setCreatedAt(madagascarTime);
 
         users.add(newUser);
 

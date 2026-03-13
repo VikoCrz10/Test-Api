@@ -5,7 +5,7 @@ import javax.crypto.spec.SecretKeySpec;
 import java.util.Base64;
 
 public class AES {
-    private static final String SECRET_KEY = "12345678901234567890123456789012"; // 32 chars = AES256
+    private static final String SECRET_KEY = "12345678901234567890123456789012";
 
     public static String encrypt(String strToEncrypt) {
         try {
