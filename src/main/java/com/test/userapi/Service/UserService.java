@@ -139,7 +139,13 @@ public class UserService {
         address1.setStreet("street No. 1");
         address1.setCountryCode("UK");
 
-        user1.setAddresses(List.of(address1));
+        Address address2 = new Address();
+        address2.setId(2L);
+        address2.setName("homeaddress");
+        address2.setStreet("street No. 2");
+        address2.setCountryCode("AU");
+
+        user1.setAddresses(List.of(address1, address2));
 
         User user2 = new User();
         user2.setId(UUID.randomUUID());
